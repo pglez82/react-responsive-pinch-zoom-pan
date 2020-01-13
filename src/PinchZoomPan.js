@@ -211,12 +211,12 @@ export default class PinchZoomPan extends React.Component {
     handleRefImage = ref => {
         if (this.imageRef) {
             this.cancelAnimation();
-            this.imageRef.removeEventListener('touchmove', this.handleTouchMove);
+            //this.imageRef.removeEventListener('touchmove', this.handleTouchMove);
         }
 
         this.imageRef = ref;
         if (ref) {
-            this.imageRef.addEventListener('touchmove', this.handleTouchMove, { passive: false });
+            //this.imageRef.addEventListener('touchmove', this.handleTouchMove, { passive: false });
         }
 
         const { ref: imageRefProp } = React.Children.only(this.props.children);
@@ -523,6 +523,7 @@ export default class PinchZoomPan extends React.Component {
                 {React.cloneElement(childElement, {
                     onTouchStart: this.handleTouchStart,
                     onTouchEnd: this.handleTouchEnd,
+		    onTouchMove: this.handleTouchMove,
                     onMouseDown: this.handleMouseDown,
                     onMouseMove: this.handleMouseMove,
                     onDoubleClick: this.handleMouseDoubleClick,
@@ -564,7 +565,7 @@ export default class PinchZoomPan extends React.Component {
 
     componentWillUnmount() {
         this.cancelAnimation();
-        this.imageRef.removeEventListener('touchmove', this.handleTouchMove);
+        //this.imageRef.removeEventListener('touchmove', this.handleTouchMove);
         window.removeEventListener('resize', this.handleWindowResize);
     }
 
