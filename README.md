@@ -1,3 +1,5 @@
+Pablo: Some modifications that make it work in conjuction with the circles in boulderproblemweb. To build this project run `npm install` and `npm run prepublishOnly`. Boulderproblemsweb depend on this project.
+
 # react-responsive-pinch-zoom-pan
 
 A React component that adds pinch-zoom and pan capability to an `img` element. Both mobile and desktop browsers are supported. In desktop mode, you zoom with the mouse scrollwheel, and pan by dragging.
